@@ -23,8 +23,8 @@ RUN apk update -f \
 
 RUN pip install --no-cache-dir --upgrade streamlink yq yt-dlp
 
-COPY /volume3/dockerdata/live-dl/live-dl ./
-COPY /volume3/dockerdata/live-dl/config.example.yml ./config.yml
+COPY ./live-dl ./
+COPY ./config.example.yml ./config.yml
 RUN chmod a+x ./live-dl
 
 ENTRYPOINT ["./live-dl"]
